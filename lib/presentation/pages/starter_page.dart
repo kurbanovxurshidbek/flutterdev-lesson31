@@ -17,20 +17,20 @@ class StarterPage extends StatefulWidget {
 }
 
 class _StarterPageState extends State<StarterPage> {
-  late StarterBloc bloc;
+  late StarterBloc starterBloc;
 
 
   @override
   void initState() {
     super.initState();
-    bloc = context.read<StarterBloc>();
-    bloc.initVideoController();
-    bloc.add(StarterVideoEvent());
+    starterBloc = context.read<StarterBloc>();
+    starterBloc.initVideoController();
+    starterBloc.add(StarterVideoEvent());
   }
 
   @override
   void dispose() {
-    bloc.exitVideoController();
+    starterBloc.exitVideoController();
     super.dispose();
   }
 
@@ -53,8 +53,8 @@ class _StarterPageState extends State<StarterPage> {
                 ),
 
                 Expanded(
-                  child: bloc.controller.value.isInitialized
-                      ? VideoPlayer(bloc.controller)
+                  child: starterBloc.controller.value.isInitialized
+                      ? VideoPlayer(starterBloc.controller)
                       : Container(),
                 ),
 
@@ -63,7 +63,7 @@ class _StarterPageState extends State<StarterPage> {
                   children: [
                     GestureDetector(
                       onTap: (){
-                        Navigator.pushReplacementNamed(context, HomePage.id);
+                        starterBloc.callHomePage(context);
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),

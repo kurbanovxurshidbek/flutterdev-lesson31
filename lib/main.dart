@@ -4,6 +4,8 @@ import 'package:geminiclone/presentation/bloc/starter/starter_bloc.dart';
 import 'package:geminiclone/presentation/pages/home_page.dart';
 import 'package:geminiclone/presentation/pages/starter_page.dart';
 
+//https://github.com/akhrorovv/Gemini-AI-Bloc/tree/master
+
 void main() {
   runApp(const MyApp());
 }

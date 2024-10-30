@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-sealed class StarterState extends Equatable {
+abstract class StarterState extends Equatable {
   const StarterState();
 }
 

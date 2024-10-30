@@ -1,7 +1,7 @@
 
 import 'package:equatable/equatable.dart';
 
-sealed class HomeState extends Equatable {
+abstract class HomeState extends Equatable {
   const HomeState();
 }
 
